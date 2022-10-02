@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
-export class QuizComponent implements OnInit {
+export class QuizComponent {
 
-  constructor() { }
+  public age: string = "f";
 
-  ngOnInit(): void {
+  onSubmit(): void {
+    this.age = "444"
   }
-
 }
