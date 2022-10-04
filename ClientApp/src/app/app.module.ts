@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { AboutComponent } from './about/about.component';
+import { ResultComponent } from '../result/result.component';
+
 
 @NgModule({
   declarations: [
@@ -20,18 +22,21 @@ import { AboutComponent } from './about/about.component';
     CounterComponent,
     FetchDataComponent,
     QuizComponent,
-    AboutComponent
+    AboutComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'quiz', component: QuizComponent },
-      { path: 'about', component: AboutComponent }
+      { path: 'about', component: AboutComponent },
+      { path: 'result', component: ResultComponent }
     ])
   ],
   providers: [],
